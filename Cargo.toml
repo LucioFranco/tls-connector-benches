@@ -1,0 +1,18 @@
+[package]
+name = "https-connector-benches"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = { version = "0.14", features = ["full"] }
+hyper-rustls = { version = "0.24", features = ["webpki-roots", "rustls-native-certs"] }
+tokio = { version = "1", features = ["full"] }
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports", "async", "async_futures", "async_tokio"] }
+
+[[bench]]
+name = "http"
+harness = false
